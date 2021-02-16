@@ -1,0 +1,7 @@
+<p>Bonjour <%= @resource.email %>!</p>
+
+<p>Votre compte Chatons a été bloqué en raison d'un trop grand nombre de tentative de connexion infructueuses.</p>
+
+<p>Veuillez cliquer sur le lien ci-dessous pour débloquer votre compte:</p>
+
+<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>

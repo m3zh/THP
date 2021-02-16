@@ -1,0 +1,58 @@
+<div class="container text-center mt-5 mb-5">
+  <h1>Mon panier</h1>
+</div>
+
+<% if @cart.items.empty? %>
+  <div class="container text-center mt-5 mb-5">
+  <h3>Quand les chats ne sont pas là ...</h3>
+  <h6>Le panier est vide.</h6>
+  </div>
+<% else %>
+
+  <% @cart.items.each do |item| %>
+    <div class="container">
+      <div class="row m-1">
+        <div class="col-xs-4 mt-auto mb-auto mr-5">
+          <img src=<%= item.image_url %> alt="" style="width: 80px; height: 100px; object-fit: cover;" class="show-image rounded"/>
+        </div>
+        <div class="card-body pt-0">
+          <h4 class="card-title"><%= item.title %></h4>
+          <h6 class="card-subtitle"><b><%= sprintf('%.2f', item.price) %> €<b></h6>
+        </div>
+        <div class="col-xs-4">
+          <%= link_to item_path(item.id), method: :delete, class: "btn btn-outline-dark btn-sm" do %><i class="fa fa-trash"></i><% end %>
+        </div>
+      </div>
+    </div>
+    <hr style="width: 80%">
+  <% end %>
+
+  <div class="container text-center">
+    <%= form_tag user_orders_path(current_user) do %>
+      <article>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+        <label class="amount">
+          <span>Régler <%= number_with_precision(@cart.total_price, precision: 2, strip_insignificant_zeros: true) %> €</span>
+        </label>
+      </article>
+
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="Panier"
+              data-amount= <% @cart.total_price * 100%>
+              data-currency='eur'
+              data-locale="auto">
+      </script>
+
+      <%= hidden_field_tag :user, :value => current_user.id %>
+      <%= hidden_field_tag :cart, :value => @cart.id %>
+
+    <% end %>
+
+
+  </div>
+<% end %>

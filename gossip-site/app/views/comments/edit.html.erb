@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="navbar-brand" href='<%= new_session_path %>'>HOME</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=gossips_path %>'>GOSSIPS</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=cities_path %>'>CITIES</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=team_path%>'>TEAM</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=contact_path%>'>CONTACT US</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="btn btn-success m-1" style="display:block; width: 70px; height: 30px;padding: 4% 2% 2% 2%;" >Profile</a>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "Log Out", logout_path, class: 'btn btn-danger m-1', style:'display:block; width: 70px; height: 30px;padding: 4% 2% 2% 2%;'%>
+      </li>
+    </ul>
+</nav>
+<% if @comment.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li>Error: <%= message %></li>
+      <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container" >
+    <h1 class="display-4">Edit this comment to gossip #<%= params[:gossip_id] %></h1>
+  </div>
+</div>
+
+<div class="card text-center m-4 mx-auto" style="width: 80%;">
+  <div class="card-body">
+    <%= form_for [@gossip,@comment], authenticity_token: true do |c|%>
+    <div class="form-group">
+    <h3 class="card-text"><label>TEXT:</label>
+      <%= c.text_area :content, class: 'form-control' %>
+    </h3>
+    </div>
+    <div class="form-group">
+    <button type="submit" class="btn m-3 btn-outline-warning">Edit</button>
+    </div>
+    <% end %>
+</div>
+</div>

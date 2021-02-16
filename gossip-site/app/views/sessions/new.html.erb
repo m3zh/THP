@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="navbar-brand" href='/'>HOME</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=gossips_path %>'>GOSSIPS</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=cities_path %>'>CITIES</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=team_path%>'>TEAM</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=contact_path%>'>CONTACT US</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <%= link_to "Profile", profile_path, class: 'btn btn-success m-1', style:'display:block; width: 70px; height: 30px;padding: 4% 2% 2% 2%;'%>
+      </li>
+    <li class="nav-item active">
+      <%= link_to "Log Out", logout_path, class: 'btn btn-danger m-1', style:'display:block; width: 70px; height: 30px;padding: 4% 2% 2% 2%;'%>
+      </li>
+    </ul>
+</nav>
+
+<% flash.each do |k,v| %>
+<div class="alert alert-success" role="success">
+ <%= content_tag :p, v, :class => "flash #{k}" %>
+</div>
+<% end %>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container" >
+    <h1 class="display-4">Welcome <%= User.all[-1].first_name %> !</h1>
+  </div>
+</div>
+<h1 class="h1 m-4 text-center">The internet is yours to seize </h1>
+<h3 class="h4 m-4 text-center">Help you with the navbar to browse around<p role="image" aria-label="tongue">🐙</p></h3>

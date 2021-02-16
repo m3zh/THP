@@ -1,0 +1,8 @@
+if (document.getElementById("myCartButton<%= @item.id %>").classList.contains("button-success")){
+  alert("Ce chaton est déjà dans ton panier");
+}
+if (document.getElementById("myCartButton<%= @item.id %>").classList.contains("btn-outline-primary")){
+  alert("Ce chaton est déjà dans ton panier");
+}
+document.getElementById("myCartButton<%= @item.id %>").classList.replace("fa-shopping-cart","fa-check");
+document.getElementById("myCartButton<%= @item.id %>").classList.replace("btn-primary","btn-outline-primary");

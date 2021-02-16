@@ -1,0 +1,146 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+
+ *= require timeline
+ *= require united_theme
+
+ */
+
+.jumbotron {
+  margin-bottom: 70px;
+  /*Remove this section to remove jumbotron image*/
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.9) 100%), url("https://images.unsplash.com/photo-1515002246390-7bf7e8f87b54?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=45");
+  background-size: auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*Remove this section to remove jumbotron image */
+
+}
+
+.alert {
+  margin-bottom: 0px;
+}
+
+.btn-card {
+  margin-left: 3px;
+}
+
+.card-show {
+  width: 65rem;
+  margin-top: 1rem;
+}
+
+.show-image {
+  max-width: 500px;
+  max-height: 450px;
+  box-shadow: black 0px 0px 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-block-show {
+  margin: 25px;
+}
+
+.col-md-5-show {
+  max-width: 100%;
+}
+
+.list-group {
+  margin-top: 25px;
+}
+
+.show-picture {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.button-back {
+  margin-top: 2rem;
+}
+
+.breadcrumb-container li {
+  display: inline-block;
+}
+
+.item-breadcrumb {
+  color: #AEA7A1;
+}
+
+.item-breadcrumb:hover {
+  color: #868e96;
+}
+
+.button-back {
+  padding-left: 1.5rem;
+}
+
+ol {
+  padding-inline-start: 0;
+}
+
+.user-email {
+  color: #868e96;
+  margin-left: 15px;
+}
+
+.order-button {
+  margin-left: 3px;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 7rem;
+}
+
+footer {
+  position: absolute;
+  right: 0;bottom:0;left:0;
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.timeline-card {
+  padding-bottom :10px !important;
+}
+
+.timeline-card p {
+  padding: 0 30px;
+}
+
+.timeline {
+  margin-bottom: 40px;
+}
+
+section {
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+.table-order-show {
+  margin-top: 40px;
+}
+
+.card-body-show {
+  max-width: 450px;
+}

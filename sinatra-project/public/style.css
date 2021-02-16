@@ -1,0 +1,50 @@
+html,body {
+  width: 100%;
+  length: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+  flex-direction: column;
+
+}
+
+h1,h2,div {
+  margin: 30px;
+
+}
+
+.gossip {
+  width: 300px;
+  padding: 3%;
+  border-radius: 3%;
+  background-color: rgba(103,128,159,1);
+
+}
+
+.success  {
+  width: 300px;
+  margin-top: 100px;
+  border-radius: 3%;
+  padding: 5%;
+  background-color: rgba(38,166,91,1);
+
+}
+
+.form {
+  width: 300px;
+  margin-top: 50px;
+  padding: 10%;
+  border-radius: 3%;
+  background-color: rgba(22,160,133,1);
+}
+
+.comment {
+  width: 500px;
+  margin-top: 50px;
+  padding: 2%;
+  border-radius: 3%;
+  background-color: rgba(228,233,237,1);
+}

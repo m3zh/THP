@@ -1,0 +1,23 @@
+<html>
+    <head>
+      <title>The Gossip Project</title>
+      <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+      <div style="text-align:center">
+      <h1>Insert a new gossip</h1>
+      <a  href="/gossips/new/">New Gossip</a>
+      </div>
+      <div style="text-align:center">
+        <h2>All New Gossip</h2>
+        <% gossips.each_with_index do |gossip,idx| %>
+        <p class="gossip">
+          <u><%= gossip.author %></u> says <br/>
+        <em> <%= gossip.content %></em><br/>
+          <a href="/gossips/<%= idx + 1 %>">Link</a>
+          <a  href="/gossips/<%= idx + 1 %>/edit">Edit</a>
+        </p>
+        <% end %>
+      </div>
+    </body>
+</html>

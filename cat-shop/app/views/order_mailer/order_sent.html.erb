@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h2>Félicitations vous venez de faire l'aquisition de "Chatons"</h2>
+
+    <p>Vraiment trop mignon</p>
+
+    <p>Voici la commande n° <%=@order.id%> :</p>
+
+    <%@order.items.each do |item|%>
+    <p><%=item.title%></p>
+    <img src=<%= item.image_url %> alt="Cute cat image">
+    <%end%>
+
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<div class="container-fluid mt-5 mx-5">
+  <div class = "row table-order-show">
+    <div class="col-5">
+      <table class="table table-hover">
+        <thead>
+          <tr class="bg-primary text-white text-center">
+            <th scope="col">n°</th>
+            <th scope="col">Dates</th>
+            <th scope="col">Prix</th>
+          </tr>
+        </thead>
+        <tbody id="order">
+            <% @orders.each do |order|  %>
+              <tr id="<%= order.id %>">
+                <th scope="row" class="text-center">
+                    <%= order.id %>
+                </th>
+                <td class="text-center">
+                    <%if @orders == nil%>
+                        Aucune commande en cours ou traitée.
+                    <%else%>
+                        <%if order.read == true%>
+                            <%= link_to "Du #{order.created_at.strftime("%d/%m/%Y à %H:%M")}", superuser_order_path(order), remote: true %>
+                        <%else%>
+                            <strong><%= link_to "Du #{order.created_at.strftime("%d/%m/%Y à %H:%M")}", superuser_order_path(order), remote: true %></strong>
+                        <%end%>
+                    <%end%>
+                </td>
+                <td class="text-center">
+                    <%= sprintf('%.2f', order.total_price) %> €
+                </td>
+              </tr> 
+            <%end%>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-6">
+      <table class="table table-hover" >
+        <thead>
+          <tr class="bg-primary text-white text-center">
+            <th scope="col">Commande Selectionnée</th>
+          </tr>
+        </thead>
+        <tbody id="order-selected">
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

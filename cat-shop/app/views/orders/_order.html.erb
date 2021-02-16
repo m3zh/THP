@@ -1,0 +1,21 @@
+<tr id="<%= order.id %>">
+  <th scope="row" class="text-center">
+    <%= order.id %>
+  </th>
+  <td class="text-center">
+    <%if @user == current_user%>
+      <%if @user.orders == nil%>
+        Vous n'avez aucune commande en cours ou traitée.
+      <%else%>
+        <%if order.read == true%>
+          <%= link_to "Du #{order.created_at.strftime("%d/%m/%Y à %H:%M")}", user_order_path(current_user, order), remote: true %>
+        <%else%>
+          <strong><%= link_to "Du #{order.created_at.strftime("%d/%m/%Y à %H:%M")}", user_order_path(current_user, order), remote: true %></strong>
+        <%end%>
+      <%end%>
+    <%end%>
+  </td>
+  <td class="text-center">
+    <%= sprintf('%.2f', order.total_price) %> €
+  </td>
+</tr> 

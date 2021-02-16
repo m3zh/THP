@@ -1,0 +1,24 @@
+<html>
+    <head>
+      <title>Gossip Page</title>
+      <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+      <h1 style="text-align:center">Gossip #<%= id %></h1>
+      <div style="text-align:center">
+      <a href="/">Return to the home page</a>
+      </div>
+      <div style="text-align:center" class="gossip">
+        <p >Author: <%= gossip.author %><br/>
+           Content: <%= gossip.content %></p>
+           <a href="/gossips/<%= id %>/edit">Edit</a>
+      </div>
+      <div>
+        <h3 style="text-align:center; margin:0px">Add a comment</h3>
+        <form class="comment" action='/gossips/<%= id %>/edit/' method=POST>
+         Your name: <input type='text' name='comment_author'/><br/>
+         Your comment: <input type='text' name='comment_content'/>
+        <input type='submit'/>
+        </form>
+    </body>
+</html>

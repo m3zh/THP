@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="navbar-brand" href='<%= new_session_path %>'>HOME</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=gossips_path %>'>GOSSIPS</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=cities_path %>'>CITIES</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=team_path%>'>TEAM</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=contact_path%>'>CONTACT US</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="btn btn-success m-1" style="display:block; width: 70px; height: 30px;padding: 4% 2% 2% 2%;" >Profile</a>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "Log Out", logout_path, class: 'btn btn-danger m-1', style:'display:block; width: 70px; height: 30px;padding: 4% 2% 2% 2%;'%>
+      </li>
+    </ul>
+</nav>
+
+<% if @gossip.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <ul>
+      <% @gossip.errors.full_messages.each do |message| %>
+        <li>Error: <%= message %></li>
+      <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container" >
+    <h1 class="display-4">Gossip #<%= Gossip.last.id + 1 %></h1>
+  </div>
+</div>
+
+
+<h1 class="h1 m-4 text-center"> What's the latest news in town? </h1>
+<div class="card text-center m-4 mx-auto" style="width: 8'%;">
+  <div class="card-body">
+    <%= form_for @gossip, authenticity_token: true do |g| %>
+    <div class="form-group">
+    <h6 class="card-title"><label>TITLE:</label>
+      <%= g.text_field :title, class: 'form-control' %>
+    </h6>
+    </div>
+    <div class="form-group">
+    <p class="card-text"><label>TEXT:</label>
+      <%= g.text_area :content, class: 'form-control' %>
+    </p>
+    </div>
+    <div class="form-group">
+    <button type="submit" class="btn m-3 btn-primary">Create</button>
+    </div>
+    <% end %>
+</div>
+</div>

@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="navbar-brand" href='<%= new_session_path %>'>HOME</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=gossips_path%>'>GOSSIPS</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=cities_path%>'>CITIES</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=team_path%>'>TEAM</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=contact_path%>'>CONTACT US</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <%= link_to "Log Out", logout_path, class: 'btn btn-danger m-1', style:'display:block; width: 70px; height: 30px;padding: 4% 2% 2% 2%;'%>
+      </li>
+    </ul>
+</nav>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container" >
+    <h1 class="display-4">Sign up and join the Gossip project</h1>
+  </div>
+</div>
+<h1 class="h3 m-4 text-center">Tell us something about you:</h1>
+<form class="m-4 text-center" action="/users" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="text" class="m-3" placeholder="Your name" name="name"><br>
+  <input type="text" class="m-3" placeholder="Your email" name="email"><br>
+  <input type="text" class="m-3" placeholder="Your password" name="password"><br>
+  <input type="text" class="m-3" placeholder="Confirm your password" name="confirmation_password"><br>
+  <input type="submit" class="btn btn-danger m-4" value="Sign Up">
+</form>

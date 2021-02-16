@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h2>Une nouvelle commande vient d'être passée</h2>
+
+    <p><%=@customer.email%> vient de passer commande.</p>
+
+    <p>Le numéro de la commande est <%=@order.id%>, celle ci contient:</p>
+
+    <%@order.items.each do |item|%>
+    <p><%=item.title%></p>
+    <%end%>
+
+  </body>
+</html>

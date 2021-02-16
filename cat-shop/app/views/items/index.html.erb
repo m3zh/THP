@@ -1,0 +1,33 @@
+
+<div class="jumbotron">
+  <h1 class="display-3">Chatons lovers</h1>
+  <p class="lead">Un espace pour les amoureux(se) des félins mignons</p>
+  <hr class="my-4">
+  <p>Oui, on le sait, les chats c’est trop mignon ! Des images de chatons d'une qualité jamais égalée. </p>
+  <p class="lead">
+    <%= link_to "Trouvez moi un chaton", item_path(@items.all.sample(1)), class: "btn btn-primary btn-lg"%>
+  </p>
+</div>
+
+<div class="card-columns border-info container">
+  <% @items.each do | item | %>
+    <div class="card border-secondary mb-4">
+      <% if item.photo.attached? %>
+      <%= image_tag item.photo , class: "card-img-top" %>
+      <% else %>
+      <img class="card-img-top" src=<%= item.image_url %> >
+      <% end %>
+      <div id="indexCart<%= item.id %>" class="card-body">
+        <p class="card-text "><b> <%= sprintf('%.2f', item.price) %> €</b></p>
+          <div class="d-flex justify-content-between">
+          <%= link_to "Voir le produit", item_path(item), class: "btn btn-outline-primary btn-sm mr-3"%>
+          <% if user_signed_in? %>
+          <%= link_to item_path(id: item.id), method: :put, class: "btn btn-primary btn-sm ml-1", remote: true do %><i id="myCartButton<%= item.id %>" class="fa fa-shopping-cart"></i><% end %>
+          <% else %>
+          <%= link_to new_cart_path, class: "btn btn-primary btn-sm" do %><i class="fa fa-shopping-cart"></i><% end %>
+          <% end %>
+          </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,9 @@
+<h1>Items#create</h1>
+
+<% CartItem.where(cart_id: session[:cart_id]).each do |item| %>
+
+<p><%= item.title %></p>
+
+
+
+<% end %>

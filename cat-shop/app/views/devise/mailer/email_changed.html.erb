@@ -1,0 +1,7 @@
+<p>Bonjour <%= @email %>!</p>
+
+<% if @resource.try(:unconfirmed_email?) %>
+  <p>Ceci est un message pour vous faire savoir que votre adresse email enregistrée sur Chatons est en cours de modification. Votre nouvelle adresse enregistrée sera <%= @resource.unconfirmed_email %>.</p>
+<% else %>
+  <p>Ceci est un message pour vous confirmer que votre adresse email a bien été modifiée sur Chatons. L'adresse à présent enregistrée est <%= @resource.email %>.</p>
+<% end %>

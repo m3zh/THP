@@ -1,0 +1,13 @@
+Félicitations vous venez de faire l'aquisition de "Chatons"
+=============================================================
+
+Vraiment trop mignon
+
+Voici ta commande n° <%=@order.id%> :
+
+<%@order.items.each do |item|%>
+<%=item.title%>
+<%=item.image_url%>
+
+
+<%end%>

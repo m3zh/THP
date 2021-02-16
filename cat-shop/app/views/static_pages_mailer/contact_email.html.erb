@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h4>Nouvelle demande via le formulaire de contact</h4>
+    <p>
+      <%=@user%> vient d'envoyer le message suivant:
+    </p>
+    <p>
+      <%=@body%>
+    </p>
+    <p>  
+      Pour lui répondre: <%= @user_email%> 
+      </p>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<thead>
+  <tr class="bg-primary text-white text-center">
+    <th scope="col">Commande n°<%= order.id %></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <% @order.items.each do |item| %>
+        <div class="container"></div>
+          <div class="row m-1">
+            <div class="col-xs-4 mt-auto mb-auto mr-5">
+              <img src=<%= item.image_url %> alt="" style="width: 80px; height: 100px; object-fit: cover;" class="show-image rounded"/>
+            </div>
+            <div class="card-body pt-0 mr-auto card-body-show">
+              <h4 class="card-title"><%= item.title %></h4>
+              <h6 class="card-subtitle"><%= item.description%></h6>
+            </div>
+            <div class="text-right col">
+              <h6><b><%= sprintf('%.2f', item.price)%> €<b></h6>
+              <h6>Quantité : 1</h6>
+            </div>
+          </div>
+        </div>
+        <hr style="width: 80%">
+      <%end%>
+      <div class="card-body pt-0 row">
+        <h4 class="card-title mr-auto">Prix total</h4>
+        <h6 class="card-subtitle text-right"><b><%= sprintf('%.2f', order.total_price) %> €<b></h6>
+      </div>
+    </td>
+  </tr>
+</tbody>

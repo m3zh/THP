@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="navbar-brand" href='<%= new_session_path %>'>HOME</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=gossips_path %>'>GOSSIPS</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=cities_path %>'>CITIES</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=team_path%>'>TEAM</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=contact_path%>'>CONTACT US</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="btn btn-success m-1" style="display:block; width: 70px; height: 30px;padding: 4% 2% 2% 2%;">Profile</a>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "Log Out", logout_path, class: 'btn btn-danger m-1', style:'display:block; width: 70px; height: 30px;padding: 4% 2% 2% 2%;'%>
+      </li>
+    </ul>
+</nav>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container" >
+    <h1 class="display-4">Our Team</h1>
+  </div>
+</div>
+<div style="display:flex; justify-content:space-around; margin:auto">
+<div class="card m-5" style="width:300px">
+  <img class="card-img-top" src="https://i.picsum.photos/id/1002/4312/2868.jpg" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">Jane Doe</h4>
+    <p class="card-text">The Hacker</p>
+    <a href="#" class="btn btn-primary">See Profile</a>
+  </div>
+</div>
+<div class="card m-5" style="width:300px">
+  <img class="card-img-top" src="https://i.picsum.photos/id/1060/5598/3732.jpg" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">Andrea Tess</h4>
+    <p class="card-text">The Businessperson</p>
+    <a href="#" class="btn btn-primary">See Profile</a>
+  </div>
+</div>
+<div class="card m-5" style="width:300px">
+  <img class="card-img-top" src="https://i.picsum.photos/id/1070/5472/3648.jpg" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">Patricia VanPelt</h4>
+    <p class="card-text">The HR Expert</p>
+    <a href="#" class="btn btn-primary">See Profile</a>
+  </div>
+</div>
+</div>

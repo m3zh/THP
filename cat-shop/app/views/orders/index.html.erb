@@ -1,0 +1,38 @@
+<div class="container-fluid mt-5">
+  <h2 class="text-center">Mes commandes</h2>
+  <div class = "row table-order-show">
+    <div class="col-5">
+      <table class="table table-hover">
+        <thead>
+          <tr class="bg-primary text-white text-center">
+            <th scope="col">n°</th>
+            <th scope="col">Dates</th>
+            <th scope="col">Prix</th>
+          </tr>
+        </thead>
+        <tbody id="order">
+          <% if (@user.orders != nil) %>
+            <% @user.orders.order("id ASC").each do |order|  %>
+              <%= render 'order', order: order%>
+            <%end%>
+          <% else %>
+            <tr>
+              <td>
+                <p> Vous n'avez aucune commande passée ou en cours.</p>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-7">
+      <table class="table table-hover" id="order-selected">
+      </table>
+    </div>
+  </div>
+</div>
+<div class="container font-weight-bold mt-4">
+<%= link_to " < Retour", :back %>
+</div>
+

@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="navbar-brand" href='<%= new_session_path %>'>HOME</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=gossips_path %>'>GOSSIPS</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=cities_path %>'>CITIES</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=team_path%>'>TEAM</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=contact_path%>'>CONTACT US</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="btn btn-success m-1" style="display:block; width: 70px; height: 30px;padding: 4% 2% 2% 2%;">Profile</a>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "Log Out", logout_path, class: 'btn btn-danger m-1', style:'display:block; width: 70px; height: 30px;padding: 4% 2% 2% 2%;'%>
+      </li>
+    </ul>
+</nav>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container" >
+    <h1 class="display-4">Contact us</h1>
+  </div>
+</div>
+
+<div class="text-center" style="line-height:3em">
+
+<a class="h5 m-4 fa fa-instagram fa-stack-2x" style="color:#0275d8"> Instagram</a><br>
+<a class="h5 m-4 fa fa-facebook fa-stack-2x" style="color:#0275d8"> Facebook</a><br>
+<a class="h5 m-4 fa fa-twitter fa-stack-2x" style="color:#0275d8"> Twitter</a><br>
+<a class="h5 m-4 fa fa-youtube fa-stack-2x" style="color:#0275d8"> Youtube</a><br>
+</div>

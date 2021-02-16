@@ -1,0 +1,25 @@
+<% require 'time'%>
+
+<div class = "container m-auto text-center">
+  <div class=" text-center mt-5">
+  <h1>Ajoute ta photo des chatons</h1>
+  <h3>On est toujours à la recherche des mignonneries</h3>
+  </div>
+
+  <div class="mt-3 mb-3">
+  <%= form_tag items_path, multipart: true do %>
+    <%= file_field_tag :photo %>
+  </div>
+        <div class="card">
+          <div class="card-body">
+            <h6 class="card-title">Prénom: <br> <%= text_field_tag :title %></h6>
+            <p class="card-text"> Déscription: <br> <%= text_area_tag :description %></p>
+            <p class="card-text">Prix de la photographie : <br>  <%= number_field_tag :price, value = nil, step: 0.01 %></p>
+            <p class="card-text">Mise en ligne le : <%= Time.now.strftime("%d/%m/%Y") %> </p>
+
+<%= submit_tag "Télécharger un nouveau chaton" %>
+<% end %>
+        </div>
+
+</div>
+</div>

@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="navbar-brand" href='/'>HOME</a>
+      </li>
+      <li class="nav-item active">
+      <a class="nav-link" href='<%=gossips_path %>'>GOSSIPS</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=cities_path%>'>CITIES</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=team_path%>'>TEAM</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=contact_path%>'>CONTACT US</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="btn btn-danger" style="display:block; width: 70px; height: 30px;padding: 4% 2% 2% 2%;" href='<%=new_user_path%>'>Sign Up</a>
+      </li>
+    </ul>
+</nav>
+
+<% flash.each do |k,v| %>
+<div class="alert alert-danger" role="danger">
+ <%= content_tag :p, v, :class => "flash #{k}" %>
+</div>
+<% end %>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container" >
+    <h1 class="display-4">Welcome to the Gossip Project</h1>
+  </div>
+</div>
+<h1 class="h5 m-4 text-center">Enter your email and password to log in:</h1>
+<form class="m-4 text-center" action="/sessions" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="text" placeholder="Your email" name="email">
+  <input type="text" placeholder="Your password" name="password">
+  <input type="submit" class="btn btn-success" value="Log In">
+</form>

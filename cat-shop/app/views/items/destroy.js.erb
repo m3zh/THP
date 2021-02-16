@@ -1,0 +1,7 @@
+document.getElementById("myItem<%=@item.id%>").remove()
+document.getElementById("myBill").innerHTML = "Régler <%= number_with_precision(@cart.total_price, precision: 2, strip_insignificant_zeros: true) %> €"
+<% if @cart.total_price == 0 %>
+  document.getElementById("myCart").insertAdjacentHTML("beforeend","<%= j render 'empty_cart' %>");
+  document.getElementById("myBill").innerHTML = "";
+  document.getElementsByClassName("stripe-button-el")[0].disabled = true;
+<% end %>

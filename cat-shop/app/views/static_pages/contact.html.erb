@@ -1,0 +1,28 @@
+<div class="container mt-5 mb-4">
+    <div class="my-5 alert col-md-8 offset-md-2 shadow p-3 mb-5 bg-white rounded text-center">
+        <i class="far fa-paper-plane fa-3x mt-3 mb-4 border shadow p-3 rounded-circle"></i>
+        <div class="my-2">
+            <%= form_for 'contact', url: contact_path, remote: true do |f|%>
+                <div class="form-row text-center my-2">
+                    <div class="col-md-6 mt-2">
+                        <%= f.text_field  :name, required: true, class: "form-control", placeholder: "Nom" %></br>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <%= f.text_field :email, required: true, class: "form-control", placeholder: "Email" %></br>         
+                    </div>
+                </div>
+                <%= f.text_field :subject, required: true, class: "form-control", placeholder: "Objet"%></br>         
+                 
+                <%= f.text_area :body, rows: 8, cols: 40, required: true, class: "form-control", placeholder: "Votre message"%></br>  
+
+                <%= f.submit 'Send Message', class: 'btn btn-primary' %>
+
+            <% end %>
+        </div>
+    </div>
+</div>
+
+
+<div class="container font-weight-bold">
+<%= link_to " < Retour", :back %>
+</div>

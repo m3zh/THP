@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="navbar-brand" href='<%= new_session_path %>'>HOME</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=gossips_path %>'>GOSSIPS</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=cities_path %>'>CITIES</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=team_path%>'>TEAM</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href='<%=contact_path%>'>CONTACT US</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="btn btn-success m-1" style="display:block; width: 70px; height: 30px;padding: 4% 2% 2% 2%;" >Profile</a>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "Log Out", logout_path, class: 'btn btn-danger m-1', style:'display:block; width: 70px; height: 30px;padding: 4% 2% 2% 2%;'%>
+      </li>
+    </ul>
+</nav>
+
+<% if flash[:success] %>
+  <div class="alert alert-success" role="alert">
+    <%= flash[:success] %>
+  </div>
+<% end %>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container" >
+    <h1 class="display-4"> Gossips in trend today </h1>
+  </div>
+</div>
+
+<div class="text-center">
+<a href="<%=new_gossip_path%>" class="btn btn-primary align-self-center">New Gossip</a>
+</div>
+
+
+    <div class="row justify-content-center">
+      <% Gossip.last(30).reverse.each do |gossip| %>
+    <div class="card m-4 text-center" style="width:30%;">
+      <div class="card-body">
+        <h5 class="card-title"> <%=gossip.title.upcase%> </h5>
+    <h6 class="card-subtitle mb-2 text-muted"> <%= gossip.user.first_name %> </h6>
+    <p class="card-text" style="max-height: 200px;"> <%=gossip.content%> </p>
+
+    <a href="<%=gossip_path(gossip.id)%>" class="card-link btn btn-outline-primary btn-sm mt-auto">Read</a>
+    <a class="card-link btn btn-outline-warning btn-sm mt-auto">Like</a>
+    <a href="<%=edit_gossip_path(gossip.id)%>" class="card-link btn btn-outline-info btn-sm mt-auto">Edit</a>
+    <a href="<%=gossip_path(gossip.id)%>" class="card-link btn btn-outline-danger btn-sm mt-auto" data-confirm="Sure you want to delete this gossip?"
+      data-method="DELETE">Delete</a>
+  </div>
+  </div>
+  <% end %>
+
+
+</div>

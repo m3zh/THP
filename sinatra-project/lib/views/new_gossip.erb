@@ -1,0 +1,14 @@
+<html>
+    <head>
+      <title>Write a New Gossip</title>
+      <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+      <h1 style="text-align:center">Insert a new gossip</h1>
+      <form class="form" action='/gossips/new/' method=POST>
+       Your name: <input type='text' name='gossip_author'/><br/>
+       Your gossip: <input type='text' name='gossip_content'/><br/>
+      <input type='submit'/>
+      </form>
+    </body>
+</html>
