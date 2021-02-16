@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eventbrite</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+  <body>
+    <nav class="navbar navbar-expand bg-dark mt-1 mb-1">
+      <ul class="collapse navbar-collapse list-unstyled mx-auto" id="navbarSuppoertedContent">
+      <li class="nav-item">
+        <a class="nav-link" href="/events">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">People</a>
+      </li>
+      <% if user_signed_in? %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar ml-auto list-unstyled">  
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "Profile", user_path(current_user.id), {:class => "dropdown-item"} %>
+                <%= link_to "Edit your profile", edit_user_registration_path, {:class => "dropdown-item"} %>
+           </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/events/new">New Event</a>
+                <%= link_to "My Events", user_attendances_path(current_user.id), {:class => "dropdown-item"} %>
+           </div>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign out", destroy_user_session_path, {:method => :delete, :class => "nav-link"} %>
+        </li>
+    </ul>
+    </div>
+      <% else %>
+      <ul class="navbar ml-auto list-unstyled">
+        <li>
+          <%= link_to "Sign in", new_user_session_path, {:class => "nav-link"} %>
+        </li>
+        <li>
+          <%= link_to "Sign up", new_user_registration_path, {:class => "nav-link"} %>
+        </li>
+        </ul>
+      <% end %>
+    </ul>
+    </nav>
+    <% if !notice.nil? %>
+    <p class="notice alert alert-info"><%= notice %></p>
+    <% elsif !alert.nil? %>
+    <p class="alert alert-warning"><%= alert %></p>
+    <% else %>
+    <% flash.each do |fl,msg| %>
+      <div class="alert alert-<%= fl %>"><%= msg %></div>
+    <% end %>
+    <% end %>
+    <%= yield %>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

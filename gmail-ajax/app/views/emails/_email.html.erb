@@ -1,0 +1,7 @@
+<% subject = @email.subject.split().first(2).join(' ') %>
+<tr id="e<%= @email.id%>" class="unread">
+<th scope="row" ><%= @email.id%></th>
+<td><%= link_to subject, email_path(@email.id), class: "text-muted", remote: true %></td>
+<td ><%= @email.body.split().first %> ...</td>
+<td><%= link_to "Delete", email_path(@email.id), method: :delete, class: "btn btn-warning btn-sm",remote: true %></td>
+</tr>

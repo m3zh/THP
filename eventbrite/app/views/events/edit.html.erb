@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <br><br><br>
+      <%= form_for @event, class: "form-signin mt-3" do |f| %>
+        <h1 class="h3 mb-3 font-weight-normal text-center">Edit Event</h1>
+        <div class="form-group">
+          <%= f.label :title, "Title" %><br />
+          <%= f.text_field :title, autofocus: true, placeholder: @event.title,  required: true, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :start_date, "Date" %><br />
+          <%= f.date_field :start_date, autofocus: true, placeholder: @event.start_date, required: true, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :description, "Description" %><br />
+          <%= f.text_field :description, autofocus: true, placeholder: @event.description, required: true,  class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :location, "Location" %><br />
+          <%= f.text_field :location, autofocus: true, autocomplete: "email", placeholder: @event.location, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :price, "Price" %><br />
+          <%= f.text_field :price, autofocus: true, autocomplete: "email", placeholder: @event.price, class: "form-control" %>
+        </div>
+        <div class="actions mt-5">
+          <%= f.submit "Edit Event", class: "btn btn-lg btn-warning btn-block" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

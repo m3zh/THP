@@ -1,0 +1,44 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"> Event # <%= @event.id %> </h1>
+  </div>
+</div>
+
+<div class="container">
+
+   <div class="row justify-content-md-center">
+   <div class="card m-4 text-center" style="width:50%;">
+    <div class="card-body">
+    <h5 class="card-title" style="color: rgb(245,199,26)"> <%=@event.title.upcase%> </h5>
+    <h6 class="card-subtitle mb-2 text-muted"> <%= @event.start_date %> </h6>
+    <h6 class="card-subtitle mb-2 text-muted"> <%= @event.location %> </h6>
+    <h6 class="card-subtitle mb-2"> Description: </h6>
+    <p class="card-text" style="max-height: 200px;"> <%=@event.description%> </p>
+    <h6 class="card-subtitle mb-2 text-muted"> <%= @event.price %>€</h6>
+    <%= link_to "Join Event", new_event_attendance_path(@event.id), {:class => "btn btn-outline-dark"} %>
+    </div>
+    </div>
+    </div>
+
+    <div class="row justify-content-md-center text">
+    <h4 class="m-2"><u>Admin:</u></h4>
+    <div class="text-center" style="width:100%">
+    <a href="/users/<%= @event.admin.id %>" class="h5 m-auto"> <%= @event.admin.first_name.upcase %> <%= @event.admin.last_name.upcase %> </a>
+    </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+    <h4 class="m-2"><u>Guests:</u></h4>
+    <% if @event.users.empty? %>
+    <div class="text-center" style="width:100%">
+    <h5 class="card-title m-auto"> Still waiting for people to join the event</h5>
+    </div>
+    <% else %>
+    <% @event.users.each do |guest| %>
+    <div class="text-center" style="width:100%">
+      <a href="/users/<%= guest.id %>" class="h5 m-auto"> <%= guest.first_name.upcase %> <%= guest.last_name.upcase %> </a>
+    </div>
+    </div>
+    <% end %>
+    <% end %>
+</div>

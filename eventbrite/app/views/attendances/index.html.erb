@@ -1,0 +1,33 @@
+<% flash.each do |fl,msg| %>
+  <div class="alert alert-<%= fl %>"> <%= msg %></div>
+<% end %>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container" >
+    <h1 class="display-4">MY Events</h1>
+  </div>
+</div>
+
+<% if @events.empty? %>
+<div class="row justify-content-center">
+<p> No events yet - Let's get some social life</p>
+</div>
+
+<% else %>
+
+ <div class="row justify-content-center">
+    <% @events.each do |e| %>
+     <div class="card m-4 text-center" style="width: 30%">
+    <div class="card-body">
+    <h5 class="card-title" style="color: rgb(245,199,26)"> <%= e.title.upcase%> </h5>
+    <h6 class="card-subtitle mb-2 text-muted"> <%= e.start_date %> </h6>
+    <h6 class="card-subtitle mb-2 text-muted"> <%= e.location %> </h6>
+    <h6 class="card-subtitle mb-2"> Description: </h6>
+    <p class="card-text" style="max-height: 200px;"> <%= e.description%> </p>
+    <h6 class="card-subtitle mb-2 text-muted"> <%= e.price %>€</h6>
+</div>
+</div>
+
+<% end %>
+<% end %>
+</div>

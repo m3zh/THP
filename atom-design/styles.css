@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('fonts/MontserratAlternates-Bold.otf') format("opentype");
+  }
+
+html,body{
+    height: 100%
+}
+
+.my-bg {
+    background-color: #fc8210 !important;
+}
+
+.my-bg-light {
+    background-color: #d89b62 !important;
+}
+
+.my-footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    min-height: 50px;
+    background-color: gray;
+    margin-top: 2em;
+}
+
+.my-banner-lg {
+    position: relative;
+    background: url('img/banner1.jpg');
+    background-position: 0% 25%;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 0 !Important;
+}
+
+.my-banner-sm {
+    position: relative;
+    background-image: url('img/banner2.jpg');
+    background-position: 0% 25%;
+    width: 100%;
+    height: 30%;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 0 !Important;
+    
+}
+
+.my-line-h {
+    line-height: 0.1 !important;
+}
+
+.my-line-height-lg {
+    line-height: 2rem !important;
+}
+
+.my-headline {
+    font-size: 4em !important;
+    font-weight: 800;
+}
+
+.my-subtitle {
+    font-size: 2em !important;
+    font-weight: 800;
+}
+
+.pos-relative {
+    position: relative;
+}
+
+.m-7 {
+    margin: 10rem !important;
+  }
+
+.card-image {
+    width: 50%; 
+    height: 100px; 
+    background: url('img/avatar.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+    align-self: center;
+
+}
+
+.my-card {
+    max-width: 500px;
+}
+
+.my-card-horizontal {
+    flex: 1 0 40%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.my-card-horizontal img {
+    width: 20%; 
+    height: 60px; 
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 20%;
+    align-self: left;
+}
+
+.my-comment-form {
+    flex: 1 0 80%;
+    max-width: 800px;
+    margin: auto;
+    padding: 1%;
+}
+
+.my-comment-horizontal {
+    flex: 1 0 80%;
+    max-width: 800px;
+    margin: auto;
+}
+
+
+.my-comment-horizontal img {
+    width: 20%; 
+    height: 100px; 
+    align-self: left;
+    margin: 1%;
+    position: left;
+}
+.my-secondary {
+    color: #007892 !important;
+}
+
+.my-bg-secondary {
+    background-color: #007892 !important;
+}
+
+.my-login-card {
+    max-width: 40%;
+    border: 1px solid rgb(202, 193, 193);
+    border-radius: 5%;
+    padding: 5%;
+    margin: auto;
+    margin-top: 10%;
+    background-color: rgb(255,255,255, 0.7);
+}

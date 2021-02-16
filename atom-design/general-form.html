@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="bootswatch.css" rel="stylesheet" type="text/css">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <title>Banner1</title>
+</head>
+
+<body>
+    <div class="container text-center">
+        <form class="m-7 my-line-height-lg">
+            <fieldset>
+                <legend class="text-center my-subtitle mb-5">A Form to Fill In</legend>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Surname</label>
+                    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Your surname">
+                </div>
+                <div class="form-group has-danger">
+                    <label class="form-control-label" for="inputDanger1">Username</label>
+                    <input type="text" value="wrong value" class="form-control is-invalid" id="inputInvalid">
+                    <div class="invalid-feedback">Sorry, that username's taken. Try another?</div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group has-success">
+                    <label class="form-control-label" for="inputSuccess1">Password confirmation</label>
+                    <input type="text" value="Password confirmation" class="form-control is-valid" id="inputValid">
+                    <div class="valid-feedback">Success! You've done it.</div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleSelect1">Select your city</label>
+                    <select class="form-control" id="exampleSelect1">
+                        <option>Berlin</option>
+                        <option>Dublin</option>
+                        <option>Oslo</option>
+                        <option>Amsterdam</option>
+                        <option>Zurich</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea">About you</label>
+                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <img src="icons\Tilda_Icons_5ev_disco.svg" alt="Magic icon" style="width:40px;">
+                    <label for="exampleInputFile">Choose your profile pic</label>
+                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="date">Date</label>
+                    <input class="form-control" id="date" name="date"
+                        placeholder="MM/DD/YYY add date_field in rails to get a calendar" type="text" />
+                </div>
+                <fieldset class="form-group">
+                    <label for="customRange1">Event duration (in minutes)</label>
+                    <input type="range" min="20" max="180" class="custom-range" id="customRange1">
+                    <div class="form-group">
+                        <label class="control-label">Event price</label>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">€</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </fieldset>
+            </fieldset>
+            <button type="submit" class="btn btn-block btn-success mt-1">Pay</button>
+            </fieldset>
+    </div>
+</body>
+
+</html>

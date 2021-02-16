@@ -1,0 +1,21 @@
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container" >
+    <h1 class="display-4"> EVENTBRITE - Happening NOW</h1>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <% Event.last(10).reverse.each do |event| %>
+<div class="card m-4 text-center" style="width:30%;">
+  <div class="card-body">
+    <h5 class="card-title" style="color: rgb(245,199,26)"> <%=event.title.upcase%> </h5>
+<h6 class="card-subtitle mb-2 text-muted"> <%= event.start_date %> </h6>
+<h6 class="card-subtitle mb-2 text-muted"> <%= event.location %> </h6>
+<h6 class="card-subtitle mb-2"> Description: </h6>
+<p class="card-text" style="max-height: 200px;"> <%=event.description%> </p>
+<h6 class="card-subtitle mb-2 text-muted"> <%= event.price %>€</h6>
+<%= link_to "More", event_path(event.id), {:class => "m-1 btn btn-outline-dark"} %>
+</div>
+</div>
+<% end %>

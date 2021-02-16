@@ -1,0 +1,19 @@
+// Place all the styles related to the User controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+nav {
+  max-height: 60px;
+}
+nav a{
+  color: rgb(245,199,26);
+}
+
+nav a:hover {
+  color: rgb(245,199,26);
+  border-bottom: 3px solid white;
+}
+
+.nav-link {
+  margin-top: 10px;
+}
