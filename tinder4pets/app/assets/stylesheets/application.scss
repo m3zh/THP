@@ -1,0 +1,182 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+
+ // Required variables bootstrap
+
+ @import "functions";
+ @import "minty";
+ @import "variables";
+ @import "mixins";
+
+ // Optionnal variables bootstrap
+
+ @import "root";
+ @import "reboot";
+ @import "type";
+ @import "images";
+ @import "code";
+ @import "grid";
+ @import "tables";
+ @import "forms";
+ @import "buttons";
+ @import "transitions";
+ @import "dropdown";
+ @import "button-group";
+ @import "input-group";
+ @import "custom-forms";
+ @import "nav";
+ @import "navbar";
+ @import "card";
+ @import "breadcrumb";
+ @import "pagination";
+ @import "badge";
+ @import "jumbotron";
+ @import "alert";
+ @import "progress";
+ @import "media";
+ @import "list-group";
+ @import "close";
+ @import "modal";
+ @import "tooltip";
+ @import "popover";
+ @import "carousel";
+ @import "utilities";
+ @import "print";
+
+
+ @import "bootstrap";
+ @import "bootswatch";
+
+ // Icons
+
+ @import "font-awesome";
+
+ // Timeline
+ @import "timeline";
+
+ // User
+ @import "users";
+
+ // CSS changes
+ @import "custom";
+ @import "devise";
+ @import "custom";
+
+
+ // Flash
+@import "flash";
+
+ // Footer
+@import "footer";
+
+ // Pets view
+@import "pet_form";
+@import "pets_new_edit";
+@import "petsindex";
+@import "pets";
+
+ // Static pages
+@import "static_pages";
+
+ // Chatroom
+@import "chatrooms";
+
+ // Likes
+@import "likes";
+
+
+// All site
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #f8f9fa;
+  position: relative;
+  min-height: 100%;
+  min-height: 100vh;
+}
+
+textarea {
+  resize: none;
+}
+
+.animal-friend {
+  font-style: italic;
+}
+
+    // Searchbar
+
+.searchbar{
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 60px;
+  background-color: #00916e;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.search_input{
+  color: white;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  caret-color:transparent;
+  line-height: 40px;
+  transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input{
+  padding: 0 10px;
+  width: 450px;
+  caret-color: white;
+  transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon{
+  background: white;
+  color:#e74c3c;
+  }
+
+.search_icon{
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color:red;
+}
+
+.search_input::placeholder {
+  color: #eceeef;
+}
+
+ // Navbar
+
+.bg-primary {
+  background-image: linear-gradient(to right, #9d112a, #dd3019);
+}
+
+.dropdown-item:hover {
+  background-color: #9d112a;
+}
+
+.dropdown-item:focus {
+  background-color: #6f0c1e;
+}

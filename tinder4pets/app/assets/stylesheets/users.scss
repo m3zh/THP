@@ -1,0 +1,48 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// User profile
+
+.info-user {
+  align-items: center; 
+  margin-bottom: 0;
+}
+
+.info-user-text {
+  margin-bottom: 0;
+}
+
+.input-group-text {
+  justify-content: center;
+}
+
+.col-first {
+  padding-left: 0;
+}
+
+.col-second {
+  padding-right: 0;
+}
+
+.card-title-profile {
+  margin-bottom: 0;
+}
+
+.custom-img-size-pet {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.col-user-animal {
+  margin: 20px;
+}
+
+.buttons-user-pets {
+  margin-top: 10px;
+}
+
+.button-user-pet {
+  margin-top: 10px;
+}
